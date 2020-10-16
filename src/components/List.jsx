@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import withService from '../service/withService';
+import Service from '../service';
 
 import { fetchBooks, addBook } from '../store/actions'
 import Spinner from './Spinner';
@@ -10,7 +10,7 @@ class List extends React.Component {
     
     componentDidMount() {
         const { fetchBooks } = this.props;
-        const service = new withService();
+        const service = new Service();
 
         service.getData()
             .then(data => fetchBooks(data));

@@ -1,4 +1,4 @@
-export default class withService {
+export default class Service {
     cards = [
         { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke', price: 60, id: 1,
         src: 'https://eloquentjavascript.net/img/cover.jpg' },
@@ -16,7 +16,7 @@ export default class withService {
                 if (resolve) {
                     resolve(this.cards);
                 } else {
-                    reject(console.log('something went wrong!'))
+                    reject(new Error('Something went wrong!'))
                 }
             }, 1000)
         })
